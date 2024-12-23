@@ -104,7 +104,9 @@ struct CountrySheet: View {
                                     .resizable()
                                     .frame(width: 16, height: 16)
                             }
+                            .frame(maxWidth: .infinity)
                             .padding(.vertical, 12)
+                            .contentShape(Rectangle())
                             .onTapGesture {
                                 isTextFieldFocused = false
                                 country = item
@@ -130,7 +132,9 @@ struct CountrySheet: View {
                                     .resizable()
                                     .frame(width: 16, height: 16)
                             }
+                            .frame(maxWidth: .infinity)
                             .padding(.vertical, 12)
+                            .contentShape(Rectangle())
                             .onTapGesture {
                                 withAnimation {
                                     selectedCity = item

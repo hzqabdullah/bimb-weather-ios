@@ -30,6 +30,11 @@ class WeatherViewModel: ObservableObject {
     }
     
     func getWeatherForCity(city: String, country: String? = nil) {
+        if city.isEmpty {
+            error = "Please enter a city"
+            return
+        }
+        
         isLoading = true
         error = nil
         
