@@ -69,15 +69,15 @@ struct CountryScreen: View {
                                 .frame(width: 24, height: 24)
                             
                         }
-                        .onTapGesture {
-                            isShowCountrySheet = true
-                        }
                         .frame(maxWidth: .infinity)
                         .padding(16)
                         .background(.white)
                         .cornerRadius(8)
                         .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 3)
                         .padding(.init(top: 40, leading: 24, bottom: 0, trailing: 24))
+                        .onTapGesture {
+                            isShowCountrySheet = true
+                        }
                         
                         Button(action: {
                             if selectedCity != nil && selectedCountry != nil {
@@ -96,9 +96,9 @@ struct CountryScreen: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.init(top: 16, leading: 24, bottom: 16, trailing: 24))
+                        .disabled(selectedCity == nil)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                    .disabled(selectedCity != nil)
                     
                     if viewModel.isLoading {
                         LoadingView(

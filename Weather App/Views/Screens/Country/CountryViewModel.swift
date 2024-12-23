@@ -41,7 +41,7 @@ class CountryViewModel: ObservableObject {
                 print(weather)
                 self.error = nil
                 
-                UserDefaults.standard.set(country, forKey: Constants.SELECTED_COUNTRY)
+                UserDefaults.standard.set(country.name, forKey: Constants.SELECTED_COUNTRY)
                 UserDefaults.standard.set(city, forKey: Constants.SELECTED_CITY)
                 
                 self.navigateToWeatherScreen = true
